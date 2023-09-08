@@ -9,7 +9,7 @@
 	"arrowParens": "avoid",
 	"importOrder": [
 		"<THIRD_PARTY_MODULES>",
-		"^@/components/(. *)$",
+		"^@/components/(.*)$",
 		"^@/core/(.*)$",
 		"^@/providers/(.*)$",
 		"^@/services/(.*)$",
