@@ -10,15 +10,15 @@
 	"importOrder": [
 		"<THIRD_PARTY_MODULES>",
 		"^@/components/(.*)$",
-		"^@/core/(.*)$",
-		"^@/providers/(.*)$",
+		"^@/core",
+		"^@/providers",
 		"^@/services/(.*)$",
 		"^@/store/(.*)$",
-		"^@/hooks/ (.*)$",
+		"^@/hooks/(.*)$",
 		"^@/types/(.*)$",
 		"^@/utils/(.*)$",
 		"^../(.*)$",
-		"^./(. *)"
+		"^./(.*)$"
 	],
 	"importOrderSeparation": true,
 	"plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
