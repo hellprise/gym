@@ -17,7 +17,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang='en'>
 			<ReactQueryProvider>
-				<body className={inter.className}>{children}</body>
+				<body className={inter.className}>
+					<header>main layout Header</header>
+					{children}
+					<footer>main layout Footer</footer>
+				</body>
 			</ReactQueryProvider>
 		</html>
 	)

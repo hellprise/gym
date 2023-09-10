@@ -1,7 +1,6 @@
-export default function Home() {
-	return (
-		<>
-			<h1 className='text-2xl font-bold text-green-300 underline'>Hello world</h1>
-		</>
-	)
+import { Home } from '@/components'
+
+export default function Homepage() {
+	// TODO: add storybook, and add in the storybook button, input, header etc (You can inspire from the https://www.maisonmargiela.com/wx)
+	return <Home />
 }
