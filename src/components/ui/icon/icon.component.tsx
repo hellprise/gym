@@ -1,7 +1,10 @@
 import clsx from 'clsx'
 import { FC } from 'react'
-import { BiArrowBack, BiMenuAltRight } from 'react-icons/bi'
+import { AiOutlineLeft } from 'react-icons/ai'
+import { BiMenuAltRight } from 'react-icons/bi'
 import { BsChevronDown } from 'react-icons/bs'
+import { CgGym } from 'react-icons/cg'
+import { FaInstagram, FaSquareFacebook, FaTwitter } from 'react-icons/fa6'
 import { GrClose } from 'react-icons/gr'
 import { IoSearch } from 'react-icons/io5'
 
@@ -32,7 +35,7 @@ export const Icon: FC<IIconProps> = ({ icon = 'chevron-down', className, ...prop
 			break
 
 		case 'arrow-left':
-			IconComponent = BiArrowBack
+			IconComponent = AiOutlineLeft
 			break
 
 		case 'close':
@@ -45,6 +48,22 @@ export const Icon: FC<IIconProps> = ({ icon = 'chevron-down', className, ...prop
 
 		case 'hamburger':
 			IconComponent = BiMenuAltRight
+			break
+
+		case 'gym':
+			IconComponent = CgGym
+			break
+
+		case 'facebook':
+			IconComponent = FaSquareFacebook
+			break
+
+		case 'instagram':
+			IconComponent = FaInstagram
+			break
+
+		case 'twitter':
+			IconComponent = FaTwitter
 			break
 
 		default:

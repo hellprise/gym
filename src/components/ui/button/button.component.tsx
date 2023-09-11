@@ -17,7 +17,7 @@ const Button: FC<IButtonProps> = ({ className, icon, children, size = 'md', colo
 					color === 'border-primary',
 				'border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-white':
 					color === 'border-secondary',
-				'border-transparent bg-transparent hover:bg-gray-2': color === 'transparent',
+				'border-transparent bg-transparent text-secondary hover:bg-gray-2': color === 'transparent',
 				'flex items-center gap-2': icon
 			})}
 			{...props}

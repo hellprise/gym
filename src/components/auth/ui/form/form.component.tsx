@@ -39,7 +39,7 @@ export const Form: FC<TypesWithClassName<IFormProps>> = ({ buttonColor, buttonSi
 			<Input label='Email' name='email' value={values.email} onChange={handleChange} error='' required />
 			<Input label='Password' name='password' value={values.password} onChange={handleChange} error='' required />
 
-			<p className='group flex items-center text-sm'>
+			<p className='group flex items-center text-sm text-secondary'>
 				Already have an account? &nbsp;
 				<Button
 					className='w-fit -translate-x-3 px-3 py-0.5 group-hover:translate-x-0'

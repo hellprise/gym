@@ -1,6 +1,15 @@
 import { SVGAttributes } from 'react'
 
-export type IconName = 'chevron-down' | 'arrow-left' | 'close' | 'hamburger' | 'search'
+export type IconName =
+	| 'chevron-down'
+	| 'arrow-left'
+	| 'close'
+	| 'hamburger'
+	| 'search'
+	| 'gym'
+	| 'facebook'
+	| 'instagram'
+	| 'twitter'
 
 export interface IIconProps extends SVGAttributes<SVGElement> {
 	icon?: IconName

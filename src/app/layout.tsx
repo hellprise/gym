@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import { Nunito_Sans, Rubik } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
-import { Sidebar } from '@/components/ui'
+import { Footer, Sidebar } from '@/components/ui'
 
-import { ReactQueryProvider } from '@/providers'
+import { ReactQueryProvider, ReduxToolkitProvider } from '@/providers'
 
 import './globals.css'
 
@@ -27,11 +27,15 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang='en'>
 			<ReactQueryProvider>
-				<body className={clsx(nunitoSans.className, rubik.className)}>
-					<Sidebar />
-					{children}
-					<footer>main layout Footer</footer>
-				</body>
+				<ReduxToolkitProvider>
+					<body className={clsx(nunitoSans.className, rubik.className)}>
+						<Sidebar />
+
+						{children}
+
+						<Footer />
+					</body>
+				</ReduxToolkitProvider>
 			</ReactQueryProvider>
 		</html>
 	)
