@@ -1,1 +1,1 @@
-export * from './types'
+export type { TypesWithClassName, TypesWithClassesAndChildren } from './types'

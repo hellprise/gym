@@ -1,11 +1,9 @@
 import clsx from 'clsx'
 import { FC } from 'react'
 
-import { Icon } from '@/components'
+import { IButtonProps, Icon } from '@/components/ui'
 
-import { IButtonProps } from './button.interface'
-
-export const Button: FC<IButtonProps> = ({ className, icon, children, size = 'md', color = 'primary', ...props }) => {
+const Button: FC<IButtonProps> = ({ className, icon, children, size = 'md', color = 'primary', ...props }) => {
 	return (
 		<button
 			className={clsx('rounded-xl border-2 font-medium uppercase transition-all duration-200', className, {
@@ -30,3 +28,5 @@ export const Button: FC<IButtonProps> = ({ className, icon, children, size = 'md
 		</button>
 	)
 }
+
+export { Button }

@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { FC } from 'react'
 
-import { IInputProps } from './input.interface'
+import { IInputProps } from '@/components/ui'
 
-export const Input: FC<IInputProps> = ({ className, label, error, ...props }) => {
+const Input: FC<IInputProps> = ({ name, className, label, error, ...props }) => {
 	return (
 		<section className='group relative z-0 w-full'>
 			<input
@@ -14,12 +14,13 @@ export const Input: FC<IInputProps> = ({ className, label, error, ...props }) =>
 						'border-error': error
 					}
 				)}
+				name={name}
 				placeholder=''
 				{...props}
 			/>
 
 			<label
-				htmlFor='floating_email'
+				htmlFor={name}
 				className={clsx(
 					'absolute left-3 top-[14px] z-[1] origin-[0] -translate-y-6 scale-75 transform bg-white px-3 py-0.5 text-lg font-medium leading-none text-gray-1 duration-300 peer-focus:text-gray-3',
 					{
@@ -41,3 +42,5 @@ export const Input: FC<IInputProps> = ({ className, label, error, ...props }) =>
 		</section>
 	)
 }
+
+export { Input }

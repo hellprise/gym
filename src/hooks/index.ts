@@ -1,0 +1,1 @@
+export { useTets } from './useTest'

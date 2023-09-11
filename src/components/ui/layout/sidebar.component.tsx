@@ -1,12 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
 
-const Navigation: FC = () => {
+export const Sidebar: FC = () => {
 	const pathname = usePathname()
 
 	return (
-		<>
+		<section>
 			{[
 				{
 					name: 'Login',
@@ -25,8 +27,6 @@ const Navigation: FC = () => {
 					</Link>
 				)
 			})}
-		</>
+		</section>
 	)
 }
-
-export default Navigation

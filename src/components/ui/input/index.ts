@@ -1,1 +1,2 @@
-export * from './input.component'
+export { Input } from './input.component'
+export type { IInputProps } from './input.interface'

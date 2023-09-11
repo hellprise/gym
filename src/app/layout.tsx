@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Nunito_Sans, Rubik } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
+import { Sidebar } from '@/components/ui'
+
 import { ReactQueryProvider } from '@/providers'
 
 import './globals.css'
@@ -26,7 +28,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang='en'>
 			<ReactQueryProvider>
 				<body className={clsx(nunitoSans.className, rubik.className)}>
-					<header>main layout Header</header>
+					<Sidebar />
 					{children}
 					<footer>main layout Footer</footer>
 				</body>

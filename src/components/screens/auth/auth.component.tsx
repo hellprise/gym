@@ -1,6 +1,4 @@
-'use client'
-
-import { Form } from '@/components'
+import { Form } from '@/components/auth'
 
 export const Auth = () => {
 	return (

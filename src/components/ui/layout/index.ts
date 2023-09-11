@@ -1,2 +1,2 @@
-export * from './footer.component'
-export * from './navigation.component'
+export { Footer } from './footer.component'
+export { Sidebar } from './sidebar.component'
