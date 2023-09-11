@@ -14,6 +14,10 @@ const config: Config = {
 				secondary: '#1c1c1c',
 				error: '#f4502f'
 			}
+		},
+		fontFamily: {
+			'nunito-sans': ['Nunito Sans', 'sans-serif'],
+			rubik: ['Rubik', 'sans-serif']
 		}
 	},
 	plugins: []

@@ -1,12 +1,20 @@
+import clsx from 'clsx'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Nunito_Sans, Rubik } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
 import { ReactQueryProvider } from '@/providers'
 
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const nunitoSans = Nunito_Sans({
+	subsets: ['latin'],
+	weight: ['200', '400', '500', '600'],
+	style: ['normal'],
+	display: 'swap'
+})
+
+const rubik = Rubik({ subsets: ['latin'], weight: ['300', '400', '500'], style: ['normal'], display: 'swap' })
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -17,7 +25,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang='en'>
 			<ReactQueryProvider>
-				<body className={inter.className}>
+				<body className={clsx(nunitoSans.className, rubik.className)}>
 					<header>main layout Header</header>
 					{children}
 					<footer>main layout Footer</footer>

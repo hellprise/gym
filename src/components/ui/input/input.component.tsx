@@ -7,9 +7,6 @@ export const Input: FC<IInputProps> = ({ className, label, error, ...props }) =>
 	return (
 		<section className='group relative z-0 w-full'>
 			<input
-				type='email'
-				name='floating_email'
-				id='floating_email'
 				className={clsx(
 					'peer relative block w-full appearance-none rounded-xl border-2 border-gray-3 bg-transparent px-5 py-2.5 text-sm font-medium text-secondary transition-all duration-200 hover:border-gray-1 focus:border-gray-1 focus:outline-none focus:ring-0',
 					className,
@@ -18,7 +15,6 @@ export const Input: FC<IInputProps> = ({ className, label, error, ...props }) =>
 					}
 				)}
 				placeholder=''
-				required
 				{...props}
 			/>
 
