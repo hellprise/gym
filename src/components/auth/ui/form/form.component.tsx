@@ -6,14 +6,24 @@ import { FC, FormEvent, useState } from 'react'
 import { IFormProps } from '@/components/auth'
 import { Button, Input } from '@/components/ui'
 
+import { toggleModalType } from '@/services'
+
+import { useAppDispatch, useTypedSelector } from '@/hooks'
+
 import { TypesWithClassName } from '@/types'
 
+import { FORM_TYPES } from '@/utils'
+
 export const Form: FC<TypesWithClassName<IFormProps>> = ({ buttonColor, buttonSize, className }) => {
-	const [values, setValues] = useState({
-		name: '',
-		email: '',
-		password: ''
-	})
+	const { formType } = useTypedSelector(({ user }) => user)
+
+	const isFormTypeRegister = formType === FORM_TYPES.REGISTER
+
+	const defaultValues = isFormTypeRegister ? { name: '', email: '', password: '' } : { email: '', password: '' }
+
+	const [values, setValues] = useState(defaultValues)
+
+	const dispatch = useAppDispatch()
 
 	const handleChange = (e: FormEvent<HTMLInputElement>) => {
 		const { name, value } = e.target as HTMLInputElement
@@ -26,35 +36,54 @@ export const Form: FC<TypesWithClassName<IFormProps>> = ({ buttonColor, buttonSi
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {}
 
 	const handleUserFormType = () => {
-		console.log('change form type')
+		dispatch(toggleModalType(formType === FORM_TYPES.REGISTER ? FORM_TYPES.LOGIN : FORM_TYPES.REGISTER))
+	}
 
-		// here I will change the form type from login to register and vice versa by using dispatch from redux-toolkit in the near future
+	const formObject = {
+		heading: isFormTypeRegister ? 'Registration' : 'Sign In',
+		changeFormTypeText: isFormTypeRegister ? 'Already have an account?' : "Don't have an account?",
+		changeFormTypeBtn: isFormTypeRegister ? 'Login Now' : 'Register',
+		btnText: isFormTypeRegister ? 'Register' : 'Login'
 	}
 
 	console.log(values)
 
 	return (
-		<form className={clsx('flex flex-col gap-y-5', className)} onSubmit={handleSubmit}>
-			<Input label='Name' name='name' value={values.name} onChange={handleChange} error='' required type='text' />
-			<Input label='Email' name='email' value={values.email} onChange={handleChange} error='' required />
-			<Input label='Password' name='password' value={values.password} onChange={handleChange} error='' required />
+		<>
+			<h1 className='mb-10 text-center text-xl font-semibold text-secondary'>{formObject.heading}</h1>
 
-			<p className='group flex items-center text-sm text-secondary'>
-				Already have an account? &nbsp;
-				<Button
-					className='w-fit -translate-x-3 px-3 py-0.5 group-hover:translate-x-0'
-					size='sm'
-					color='transparent'
-					type='button'
-					onClick={handleUserFormType}
-				>
-					Login now
+			<form className={clsx('flex flex-col gap-y-5', className)} onSubmit={handleSubmit}>
+				{isFormTypeRegister && (
+					<Input label='Name' name='name' value={values.name} onChange={handleChange} error='' required type='text' />
+				)}
+				<Input label='Email' name='email' value={values.email} onChange={handleChange} error='' required type='email' />
+				<Input
+					label='Password'
+					name='password'
+					value={values.password}
+					onChange={handleChange}
+					error=''
+					required
+					type={'password'}
+				/>
+
+				<p className='group flex items-center text-sm text-secondary'>
+					{formObject.changeFormTypeText} &nbsp;
+					<Button
+						className='w-fit -translate-x-3 px-3 py-0.5 group-hover:translate-x-0'
+						size='sm'
+						color='transparent'
+						type='button'
+						onClick={handleUserFormType}
+					>
+						{formObject.changeFormTypeBtn}
+					</Button>
+				</p>
+
+				<Button className='mt-2' color={buttonColor} size={buttonSize} type='submit'>
+					{formObject.btnText}
 				</Button>
-			</p>
-
-			<Button className='mt-2' color={buttonColor} size={buttonSize} type='submit'>
-				Register
-			</Button>
-		</form>
+			</form>
+		</>
 	)
 }

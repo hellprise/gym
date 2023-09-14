@@ -16,7 +16,8 @@ const config: Config = {
 			}
 		},
 		fontFamily: {
-			'nunito-sans': ['Nunito Sans', 'sans-serif'],
+			// 'nunito-sans': ['Nunito Sans', 'sans-serif'],
+			'open-sans': ['Open Sans', 'sans-serif'],
 			rubik: ['Rubik', 'sans-serif']
 		}
 	},

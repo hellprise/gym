@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import { Nunito_Sans, Rubik } from 'next/font/google'
+import { Open_Sans, Rubik } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
 import { Footer, Sidebar } from '@/components/ui'
@@ -9,9 +9,16 @@ import { ReactQueryProvider, ReduxToolkitProvider } from '@/providers'
 
 import './globals.css'
 
-const nunitoSans = Nunito_Sans({
+// const nunitoSans = Nunito_Sans({
+// 	subsets: ['latin'],
+// 	weight: ['200', '400', '500', '600'],
+// 	style: ['normal'],
+// 	display: 'swap'
+// })
+
+const OpenSans = Open_Sans({
 	subsets: ['latin'],
-	weight: ['200', '400', '500', '600'],
+	weight: ['400', '500', '600', '700'],
 	style: ['normal'],
 	display: 'swap'
 })
@@ -28,11 +35,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang='en'>
 			<ReactQueryProvider>
 				<ReduxToolkitProvider>
-					<body className={clsx(nunitoSans.className, rubik.className)}>
+					<body className={clsx(rubik.className, OpenSans.className)}>
 						<Sidebar />
-
-						{children}
-
+						<main className='ml-5'>{children}</main>
 						<Footer />
 					</body>
 				</ReduxToolkitProvider>

@@ -12,21 +12,24 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-nunito-sans;
+	/* @apply font-nunito-sans; */
+	@apply font-open-sans;
 }
 
 .grid-layout__open {
 	display: grid;
 	grid-template-columns: 20% 80%;
-	grid-column-gap: 20px;
-	grid-row-gap: 0px;
+	/* grid-column-gap: 20px; */
+	gap: 0;
+	/* grid-row-gap: 0px; */
 }
 
 .grid-layout__close {
 	display: grid;
 	grid-template-columns: 5% 95%;
-	grid-column-gap: 20px;
-	grid-row-gap: 0px;
+	/* grid-column-gap: 20px; */
+	gap: 0;
+	/* grid-row-gap: 0px; */
 }
 
 .grid-layout > aside {

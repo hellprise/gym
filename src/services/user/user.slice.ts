@@ -1,15 +1,15 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { FormType, UserState } from '../../types/user.interface'
+import { FormType, UserState } from '@/types'
 
-const FORM_TYPES: FormType[] = ['login', 'register']
+import { FORM_TYPES } from '@/utils'
 
 const initialState: UserState = {
 	currentUser: null,
 	cart: [],
 	wishList: [],
 	isLoading: false,
-	formType: FORM_TYPES[0],
+	formType: FORM_TYPES.REGISTER,
 	openSidebar: false
 }
 

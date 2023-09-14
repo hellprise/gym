@@ -15,14 +15,6 @@ import { toggleSidebar } from '../../../services/user'
 
 const navList = [
 	{
-		name: 'Login',
-		href: `/${ROUTES.AUTH}?type=login`
-	},
-	{
-		name: 'Register',
-		href: `/${ROUTES.AUTH}?type=register`
-	},
-	{
 		name: 'Exercises',
 		href: `/${ROUTES.EXERCISES}`
 	},
@@ -41,7 +33,7 @@ export const Sidebar: FC = () => {
 
 	const pathname = usePathname()
 
-	const { openSidebar } = useTypedSelector(({ user }) => user)
+	const { openSidebar, currentUser } = useTypedSelector(({ user }) => user)
 
 	const dispatch = useAppDispatch()
 
@@ -56,6 +48,8 @@ export const Sidebar: FC = () => {
 		document.body.classList.toggle('grid-layout__open', openSidebar)
 		document.body.classList.toggle('grid-layout__close', !openSidebar)
 	}, [isSidebarOpen, openSidebar])
+
+	// if (!currentUser) return
 
 	return (
 		<aside
