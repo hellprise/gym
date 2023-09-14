@@ -7,11 +7,11 @@ import { FC, useEffect, useState } from 'react'
 
 import { Icon } from '@/components/ui/icon'
 
+import { toggleSidebar } from '@/services'
+
 import { useAppDispatch, useTypedSelector } from '@/hooks'
 
 import { ROUTES } from '@/utils'
-
-import { toggleSidebar } from '../../../services/user'
 
 const navList = [
 	{

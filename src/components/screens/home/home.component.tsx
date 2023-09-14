@@ -1,7 +1,11 @@
+import { Grid, MainSlider, UserRoadmap } from '@/components/home'
+
 export const Home = () => {
 	return (
 		<>
-			<h1 className='text-2xl font-bold text-green-300 underline'>Hello world</h1>
+			<MainSlider />
+			<Grid />
+			<UserRoadmap />
 		</>
 	)
 }
