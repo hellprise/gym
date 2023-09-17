@@ -31,6 +31,8 @@ const navList = [
 export const Sidebar: FC = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
+	// TODO: можна вдосконалити дизайн та функціонал сайдбару. зробити іконки, коли він буде у найменшій точці своєї ширини. можна також додати іконки і коли він розкритий, щоб юзер розумів, яка іконка за що відповідає. але, щоб юзер розумів, треба додати якусь підказку, коли юзер буде наводитися на іконку, що ця іконка означає
+
 	const pathname = usePathname()
 
 	const { openSidebar, currentUser } = useTypedSelector(({ user }) => user)

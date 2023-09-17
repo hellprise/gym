@@ -1,2 +1,3 @@
-export { Auth } from './auth'
-export { Home } from './home'
+export { Auth } from './auth.component'
+export { Exercises } from './exercises.component'
+export { Home } from './home.component'

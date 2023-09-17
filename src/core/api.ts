@@ -1,7 +1,7 @@
-import axios from 'axios'
+// import axios from 'axios'
 
-import { config } from '@/core'
+// import { config } from '@/core'
 
-export const api = axios.create({
-	baseURL: config.baseApiUri
-})
+// export const api = axios.create({
+// 	baseURL: config.baseApiUri
+// })
